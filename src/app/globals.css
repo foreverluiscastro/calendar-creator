@@ -32,28 +32,22 @@ body {
 
 @media print {
   html, body {
-    background: white !important;
-    color: black !important;
-    height: auto !important;
-    overflow: visible !important;
-    font-size: 11pt;
+    background: white;
+    color: black;
+    font-size: 10pt;
     -webkit-print-color-adjust: exact;
+    overflow: visible !important;
+    height: auto !important;
   }
 
   .print-wrapper {
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    scale: 0.92;
     transform-origin: top center;
-    scale: 0.95;
+    page-break-inside: avoid !important;
   }
 
   .grid {
     page-break-inside: avoid !important;
-    break-inside: avoid !important;
   }
 
   .print\:hidden {
@@ -61,9 +55,12 @@ body {
   }
 
   input,
-  textarea,
   button,
-  .print-hidden {
+  textarea {
     display: none !important;
+  }
+
+  .border {
+    border-color: #000 !important;
   }
 }
