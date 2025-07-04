@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: var(--font-ptserif), serif;
 }
+
+@page {
+  size: A4 portrait;
+  margin: 0.5in;
+}
+
+@media print {
+  html, body {
+    background: white !important;
+    color: black !important;
+    height: auto !important;
+    overflow: visible !important;
+    font-size: 11pt;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .print-wrapper {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform-origin: top center;
+    scale: 0.95;
+  }
+
+  .grid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  input,
+  textarea,
+  button,
+  .print-hidden {
+    display: none !important;
+  }
+}

@@ -76,6 +76,9 @@ export default function Calendar() {
         Imprimir Calendario
       </button>
 
+<div className="print-wrapper">
+
+
       <div className="flex justify-center items-center gap-4 mb-4">
         <button
           className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 print:hidden"
@@ -115,12 +118,12 @@ export default function Calendar() {
           </div>
         ))}
       </div>
+
       <div className="grid grid-cols-7 gap-1 text-center mt-1">
         {matrix.flat().map((day, idx) => (
           <div
             key={idx}
-            className={`min-h-[80px] border p-1 text-sm text-left cursor-pointer ${day ? 'hover:bg-blue-100' : 'bg-gray-50'
-              }`}
+            className={`w-[120px] min-h-[80px] border p-1 text-sm text-left cursor-pointer ${day ? 'hover:bg-blue-100' : 'bg-gray-50'}`}
             onClick={() => day && setSelectedDay(day)}
           >
             {day && <div className="font-bold">{day}</div>}
@@ -260,7 +263,7 @@ export default function Calendar() {
         </div>
       </div>
 
-
+</div>
 
     </div>
 
